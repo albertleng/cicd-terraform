@@ -1,4 +1,4 @@
-name: Terraform CI
+name: Terraform CD
 
 
 on:
@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  terraform-ci:
+  terraform-cd:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,11 +29,5 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Format Terraform
-        run: terraform fmt
-
-      - name: Validate Terraform
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Apply
+        run: terraform apply --auto-approve
