@@ -3,5 +3,5 @@ locals {
 }
 
 resource "aws_sns_topic" "user_updates" {
-  name = "albertleng-updates-topic"
+  name = var.abc
 }
